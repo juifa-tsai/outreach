@@ -6,7 +6,6 @@ from tqdm import tqdm as TQDM
 from scipy.spatial.distance import cdist
 from scipy.optimize import least_squares
 
-
 class variogram(object):
     """
     Variogram estimator 
@@ -41,6 +40,18 @@ class variogram(object):
         self.nfills = []
         # fitted parameters of variogram model
         self.fitted_parms = None
+
+
+    ## Predict function ##
+    def predict(self, X):
+        """
+        Predict semi-variance with input pair distance
+        [input] 
+            X: array-like, pair distance
+        [output] 
+            array-like, semi-varaince
+        """
+        return self.model(NP.atleast_1d(X), self.fitted_parms)
 
 
     ## Fitting functions ##
