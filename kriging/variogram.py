@@ -132,7 +132,7 @@ class variogram(object):
 
             ## calucalte distance (lag) and semivariance of pair
             d = NP.triu(cdist(X[i:j, :], X[i:, :], metric=metric))
-            v = NP.triu(cdist(y[i:j, :], y[i:, :], metric='sqeuclidean')/2)
+            v = NP.triu(cdist(y[i:j, :], y[i:, :], metric='sqeuclidean'))
 
             ## select distance in lag's range
             selection = (d > self.lag_min) & (d <= self.lag_max)
