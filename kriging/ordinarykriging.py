@@ -6,7 +6,7 @@ from scipy.spatial import cKDTree
 from scipy.spatial.distance import cdist
 
 
-class kriging_ordinary(object):
+class ordinarykriging(object):
 
     def __init__(self, varigoram, debug=False):
         ## Local parameters ##
